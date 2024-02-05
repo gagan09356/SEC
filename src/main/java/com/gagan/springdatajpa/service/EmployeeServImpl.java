@@ -31,9 +31,15 @@ public class EmployeeServImpl implements EmpService{
 		}
 	}
 	
+	
+	
 	@Override
 	public void	addEmployee(){
 		//nothing to add as of now
+		Employee emp = employeeRepository.getById((long)1);
+		emp.setName("Anushka Panwar");
+		emp.setSalary(30000);
+		employeeRepository.save(emp);
 	}
 	
 	@Override

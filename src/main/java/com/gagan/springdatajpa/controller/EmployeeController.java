@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,5 +27,15 @@ public class EmployeeController {
 	@GetMapping("/findone")
 	public Employee getOneEmployee() {
 		return empd.getEmployeeById(1); 
+	}
+	
+	@PostMapping("/update")
+	public void updateEmp() {
+		empd.addEmployee();
+	}
+	
+	@PostMapping("/delete")
+	public void deleteEmp() {
+		empd.deleteEmployee(2);
 	}
 }
